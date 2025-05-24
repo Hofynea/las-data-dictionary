@@ -1,0 +1,23 @@
+.search-results-container {
+  padding: 1rem;
+}
+
+.loading,
+.error,
+.no-results {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}

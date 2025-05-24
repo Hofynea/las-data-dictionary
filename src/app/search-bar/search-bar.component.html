@@ -1,0 +1,22 @@
+<form class="search-form" (submit)="onSearch($event)">
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    [ngModelOptions]="{ standalone: true }"
+    (input)="onInputChange(searchTerm)"
+    placeholder="Search by Friendly Name..."
+  />
+  <button type="submit" aria-label="Search">
+    <i class="fa fa-search"></i>
+  </button>
+</form>
+
+<div *ngIf="isLoading" class="loading-spinner">
+  <i class="fa fa-spinner fa-spin"></i> Loading...
+</div>
+
+<ul *ngIf="searchSuggestions.length > 0 && searchTerm.trim()" class="search-suggestions">
+  <li *ngFor="let suggestion of searchSuggestions" (click)="selectSuggestion(suggestion)">
+    {{ suggestion }}
+  </li>
+</ul>

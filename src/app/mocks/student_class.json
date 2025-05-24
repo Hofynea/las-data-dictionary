@@ -1,0 +1,23 @@
+[
+    {
+        "student_id": "S001",
+        "class_id": "C101",
+        "term_id": "2024_Fall",
+        "grade": "A",
+        "grade_points": 4.0
+    },
+    {
+        "student_id": "S002",
+        "class_id": "C102",
+        "term_id": "2024_Fall",
+        "grade": "B",
+        "grade_points": 3.0
+    },
+    {
+        "student_id": "S003",
+        "class_id": "C103",
+        "term_id": "2024_Fall",
+        "grade": "C",
+        "grade_points": 2.0
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "class_id": "C101",
+        "term_id": "2024_Fall",
+        "course_name": "Introduction to Communication",
+        "instructor": "Prof. Smith",
+        "credits": 3
+    },
+    {
+        "class_id": "C102",
+        "term_id": "2024_Fall",
+        "course_name": "Data Structures",
+        "instructor": "Prof. Lee",
+        "credits": 4
+    },
+    {
+        "class_id": "C103",
+        "term_id": "2024_Fall",
+        "course_name": "World History",
+        "instructor": "Dr. Brown",
+        "credits": 3
+    }
+]

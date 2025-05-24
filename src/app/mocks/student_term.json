@@ -1,0 +1,23 @@
+[
+    {
+        "student_id": "S001",
+        "term_id": "2024_Fall",
+        "enrollment_status": "Enrolled",
+        "credits_earned": 15,
+        "gpa": 3.5
+    },
+    {
+        "student_id": "S002",
+        "term_id": "2024_Fall",
+        "enrollment_status": "Withdrawn",
+        "credits_earned": 0,
+        "gpa": null
+    },
+    {
+        "student_id": "S003",
+        "term_id": "2024_Fall",
+        "enrollment_status": "Enrolled",
+        "credits_earned": 12,
+        "gpa": 3.2
+    }
+]

@@ -1,0 +1,90 @@
+<!-- Include Font Awesome for icons -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  rel="stylesheet"
+/>
+<button
+(click)="toggleSidebar()"
+    class="toggle-btn"
+    title="Toggle Sidebar"
+>
+  <i class="fas fa-bars"></i>
+</button>
+<div *ngIf="tableName">
+  <!-- Header Info -->
+  <h1 class="table-title">{{ tableName }}</h1>
+  <h2 class="table-specification">Table Specifications</h2>
+
+  <p class="table-description">{{ tableDescription }}</p>
+  <p class="table-note"><strong>Note:</strong> {{ tableNotes }}</p>
+  <p class="table-usecases"><strong>Use Cases:</strong> {{ tableUseCases }}</p>
+
+  <!-- Search + Download -->
+  <div class="search-container">
+    <button class="download-btn" aria-label="Download" (click)="downloadCSV()">
+      <span class="download-text">Download Synthetic Data</span>
+      <i class="fas fa-download"></i>
+    </button>
+  </div>
+
+<!--  &lt;!&ndash; Filter &ndash;&gt;-->
+<!--  <div class="filter-container">-->
+<!--    <button class="filter-button">-->
+<!--      <i class="fas fa-filter"></i> Filter-->
+<!--    </button>-->
+
+<!--    <select [(ngModel)]="selectedCategory" class="category-dropdown" (change)="onCategoryChange()">-->
+<!--      <option value="">All Categories</option>-->
+<!--      <option *ngFor="let category of tableCategories" [value]="category.content">-->
+<!--        {{ category.content }}-->
+<!--      </option>-->
+<!--    </select>-->
+<!--  </div>-->
+
+  <!-- Table -->
+  <div class="table-container" style="overflow: visible;">
+    <div class="uds-table" tabindex="0" style="overflow: visible;">
+      <table>
+        <thead>
+          <tr>
+            <th
+              *ngFor="let field of tableFields"
+              scope="col"
+              style="cursor: pointer; overflow: visible; position: relative;"
+            >
+              <div class="field-name">
+                {{ field.name }}
+
+                <!-- Only show tooltip if description exists -->
+                <ng-container *ngIf="field.description">
+                  <div class="tooltip-wrapper">
+                    <span class="fa-stack">
+                      <i class="fas fa-circle fa-stack-2x" style="color: #ffc627;"></i>
+                      <i class="fas fa-info fa-stack-1x" style="color: #000;"></i>
+                    </span>
+                    <div class="uds-tooltip-description">
+                      <div class="uds-tooltip-heading">{{ field.name }}</div>
+                      <div class="uds-tooltip-body">{{ field.description }}</div>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let label of tableLabels; let i = index">
+            <td>
+              {{ label.content || "N/A" }}
+            </td>
+            <td
+              *ngFor="let entry of tableEntryContent | slice:(i * (tableFields.length - 1)):(i * (tableFields.length - 1) + (tableFields.length - 1))"
+            >
+              {{ entry?.entry }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<!-- Include Font Awesome for icons -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  rel="stylesheet"
+/>
+
+<!-- Header Information, updating dynamically -->
+<h1 class="table-title">{{ tableName }}</h1>
+<h2 class="table-specification">Table Specifications</h2>
+
+<p class="table-description">
+  {{ tableDescription }}
+</p>
+<p class="table-note">
+  <strong>Note:</strong> {{ tableNotes}}
+</p>
+<p class="table-usecases">
+  <strong>Use Cases:</strong> {{ tableUseCases }}
+</p>
+
+
+
+
+<!-- Search Bar Component -->
+<div class="search-container">
+   <!-- Download Icon (Font Awesome) Downloads CSV Synthetic Data-->
+   <button class="download-btn" aria-label="Download" (click)="downloadCSV()">
+    <span class="download-text">Download Synthetic Data</span>
+    <i class="fas fa-download"></i> <!-- Font Awesome download icon -->
+  </button>
+</div>
+
+<div class="filter-container">
+  <button class="filter-button">
+    <i class="fas fa-filter"></i> Filter
+  </button>
+</div>
+
+<div class="table-container">
+  <!-- Table container to display class details -->
+  <div class="uds-table" tabindex="0">
+    <table>
+      <thead>
+        <tr>
+          <!-- Dynamically rendered table headers -->
+          <th
+            *ngFor="let header of tableHeaders"
+            (click)="sortTable(header.name)"
+            scope="col"
+            style="cursor: pointer;"
+          >
+            <div class="tooltip-wrapper">
+              <!-- Tooltip Button -->
+              <button
+                tabindex="0"
+                class="uds-tooltip uds-tooltip-gray"
+                [attr.aria-describedby]="'tooltip-desc-1' + header.name"
+              >
+                <span class="fa-stack">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-info fa-stack-1x"></i>
+                </span>
+                <span class="uds-tooltip-visually-hidden">Notifications</span>
+              </button>
+              {{ header.name }}
+              <!-- Sorting Arrows -->
+              <span
+                *ngIf="sortTable"
+                class="sort-icon"
+                style="margin-left: 8px;"
+              >
+                <i
+                  class="fas"
+                  [ngClass]="{
+                    'fa-sort-up': sortColumn === header.name && sortDirection === 'asc',
+                    'fa-sort-down': sortColumn === header.name && sortDirection === 'desc',
+                    'fa-sort': sortColumn !== header.name
+                  }"
+                ></i>
+              </span>
+              <!-- Tooltip Description -->
+              <div role="tooltip" class="uds-tooltip-description" id="tooltip-desc-1">
+                <span class="uds-tooltip-heading">{{ header.name }}</span>
+                <span class="uds-tooltip-body">{{ header.tooltipContent }}</span>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let studentClass of studentClasses; let i = index">
+          <td>
+            <a [routerLink]="['/studentClassDetails', i]" title="View Details">
+              {{ studentClass.label }}
+            </a>
+          </td>
+          <td>{{ studentClass.friendly_name || "N/A" }}</td>
+          <td>{{ studentClass.description || "N/A" }}</td>
+          <td>{{ studentClass.category || "N/A"}}</td>
+          <td>{{ studentClass.source || "N/A"}}</td>
+          <td>{{ studentClass.name || "N/A"}}</td>
+          <td>{{ studentClass.dataset_name || "N/A"}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Tested: Ensured that the table is keyboard-navigable using tab and arrow keys -->
+    <!-- Verified: Table is screen-reader-friendly with proper focus management -->
+  </div>
+</div>

@@ -1,0 +1,123 @@
+/**
+ * Footer Component Styles
+ * 
+ * This file contains the styling for the application's footer component.
+ * It implements ASU's color scheme and responsive design elements,
+ * including layout for logo, content, terms of service, and contact info.
+ * 
+ */
+
+/* General Footer Styling */
+.footer {
+  background-color: #FFC627; /* ASU Gold */
+  padding: 20px 10px; /* Add some padding to the footer */
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.footer-container {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center items vertically */
+  justify-content: flex-start; /* Align logo to the left */
+  max-width: 1200px; /* Set a max width */
+  margin: 0 auto; /* Center container */
+  position: relative; /* Ensure flexibility for absolute positioning */
+}
+
+.footer-logo {
+  position: absolute; /* Allow precise placement */
+  left: 0; /* Align logo to the far left */
+  margin-left: -220px; /* Fine-tune the position further if needed */
+}
+
+.footer-logo img {
+  max-width: 100px;
+}
+
+/* Content Section */
+.footer-content {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-content a {
+  color: #8C1D40;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: default; 
+  text-align: center; /* Centers text content */
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+  }
+
+  .footer-content {
+    margin-top: 10px;
+  }
+
+  .footer-logo {
+    position: static;
+    margin-left: 0;
+  }
+}
+
+/* Terms of Service Section */
+.footer-terms {
+  margin-top: 15px; 
+  text-align: center; 
+  font-size: 14px; 
+  position: relative; 
+  left: 20px; 
+}
+
+.footer-terms a {
+  color: #00529B; 
+  text-decoration: none; 
+  font-weight: bold;
+}
+
+.footer-terms a:hover {
+  text-decoration: underline;
+  color: #8C1D40; 
+}
+
+.footer-terms a {
+  color: #00529B; 
+  text-decoration: none; 
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.footer-terms a:hover {
+  text-decoration: underline;
+  color: #8C1D40; 
+}
+
+.footer-contact {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 15px; 
+  text-align: center;
+  color: #333;
+}
+
+.footer-contact a {
+  color: #00529B; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+  color: #8C1D40; 
+}

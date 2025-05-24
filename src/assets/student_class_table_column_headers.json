@@ -1,0 +1,33 @@
+{
+  "headers": [
+    {
+      "name": "Label",
+      "tooltipContent": "The technical label that is a specific identifier used to describe data fields, categories, or actions within the database. "
+    },
+    {
+      "name": "Friendly Name",
+      "tooltipContent": "A nontechnical name used to more easily describe and identify the data element for the data dictionary. "
+    },
+    {
+      "name": "Description",
+      "tooltipContent": "Brief description of the element and its uses within the database."
+    },
+    {
+      "name":"Category",
+      "tooltipContent": "PLACEHOLDER, No obvious Description for this column currently. Information to be filled in later."
+    },
+    {
+      "name": "Source",
+      "tooltipContent": "Source of the data element in the database. SIS - Student information system used by ASU to store and organize student information. LMS - Learning management system used by ASU by educators to create, manage, and assess educational content."
+    },
+    {
+      "name": "Name",
+      "tooltipContent": "The name of the tool used to collect the data for the element."
+    },
+    {
+      "name": "Dataset Name",
+      "tooltipContent": "The name of the dataset that the database element belongs to."
+    }
+  ]
+}
+

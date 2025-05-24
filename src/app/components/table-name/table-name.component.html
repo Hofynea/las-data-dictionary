@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Table Names</h2>
+    
+    <!-- Display Error Message -->
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  
+    <!-- Add New Table -->
+    <button (click)="addTableName()">Add Table</button>
+  
+    <!-- Table List -->
+    <ul>
+      <li *ngFor="let table of tableNames">
+        <strong>{{ table.name }}</strong>: {{ table.description }}
+        <button (click)="removeTable(table.id!)">Delete</button>
+      </li>
+    </ul>
+  </div>
+ 

@@ -1,0 +1,23 @@
+[
+    {
+        "discussion_id": "D001",
+        "user_id": "U001",
+        "message": "I believe that effective communication is key to teamwork.",
+        "timestamp": "2024-10-11T14:30:00Z",
+        "reply_to": null
+    },
+    {
+        "discussion_id": "D001",
+        "user_id": "U002",
+        "message": "I agree, and would add that clear goals are also essential.",
+        "timestamp": "2024-10-11T14:45:00Z",
+        "reply_to": "U001"
+    },
+    {
+        "discussion_id": "D002",
+        "user_id": "U003",
+        "message": "What are the main challenges in data management?",
+        "timestamp": "2024-10-12T08:20:00Z",
+        "reply_to": null
+    }
+]

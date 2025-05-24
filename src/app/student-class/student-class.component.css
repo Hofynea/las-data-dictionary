@@ -1,0 +1,142 @@
+/* Styles for table and tooltips */
+.table-container {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.uds-table {
+  color: black;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  color: black;
+  padding: 10px;
+  text-align: left;
+  position: relative; 
+}
+
+.sort-icon i {
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.sort-icon i:hover {
+  color: #000; /* Hover effect */
+}
+
+/* Tooltip Wrapper Styling */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Font Awesome Icon Stack for Info Buttons */
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.fa-stack .fa-circle {
+  font-size: 1.5em;
+}
+
+.fa-stack .fa-info {
+  font-size: 0.75em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: normal;
+}
+
+.search-container {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.download-btn {
+  background: none; 
+  border: none;
+  cursor: pointer; 
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.download-text {
+  margin-right: 8px; 
+  font-size: 1rem; 
+}
+
+/* Tooltip container setup (whole tooltip box) */
+.uds-tooltip-description {
+  visibility: hidden; /* Hide the tooltip initially */
+  opacity: 1; 
+  position: absolute; /* Position the tooltip absolutely relative to the parent */
+  bottom: 0%; /* Position it above the element */
+  left: 50%;
+  transform: translateY(-50%); /* Center it horizontally */
+  background-color: rgba(255, 198, 39, 0.75);
+  color: rgb(8, 8, 8);
+  padding: 10px; /* padding around the content */
+  border-radius: 6px; /* Make the corners rounded */
+  z-index: 10;
+  transition: opacity 0.2s ease-in-out; 
+  width: 200px;
+}
+
+/* Tooltip Heading */
+.uds-tooltip-heading {
+  font-weight: bold;
+  color: #333; 
+  font-size: 1.1em;
+  margin-bottom: 5px; 
+}
+
+/* Tooltip Body */
+.uds-tooltip-body {
+  color: #555; 
+  font-size: 0.9em; 
+}
+
+/* Show tooltip when hovering over the table header */
+.tooltip-wrapper:hover .uds-tooltip-description {
+  visibility: visible;
+  opacity: 1; 
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button i {
+  color: rgb(0, 0, 0);
+}
+
+.filter-button:hover {
+  background-color: rgba(255, 198, 39, 0.75);
+}

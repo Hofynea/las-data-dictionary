@@ -1,0 +1,12 @@
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.title-container app-search-bar {
+    margin-left: 20px;
+    width: 250px;
+}

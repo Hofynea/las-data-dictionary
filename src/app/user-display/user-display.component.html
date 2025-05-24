@@ -1,0 +1,29 @@
+<div>
+  <h2>User Data</h2>
+  <table *ngIf="users.length > 0; else loading">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Ethnicity</th>
+        <th>Marital Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.gender }}</td>
+        <td>{{ user.ethnicity }}</td>
+        <td>{{ user.marital_status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #loading>
+    <p *ngIf="error">{{ error }}</p>
+    <p *ngIf="!error">Loading data...</p>
+  </ng-template>
+</div>

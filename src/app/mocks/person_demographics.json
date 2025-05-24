@@ -1,0 +1,26 @@
+[
+    {
+        "id": "P001",
+        "name": "John Doe",
+        "age": 21,
+        "gender": "Male",
+        "ethnicity": "Hispanic",
+        "marital_status": "Single"
+    },
+    {
+        "id": "P002",
+        "name": "Jane Smith",
+        "age": 22,
+        "gender": "Female",
+        "ethnicity": "Asian",
+        "marital_status": "Married"
+    },
+    {
+        "id": "P003",
+        "name": "Alex Johnson",
+        "age": 23,
+        "gender": "Male",
+        "ethnicity": "Caucasian",
+        "marital_status": "Single"
+    }
+]

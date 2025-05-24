@@ -1,0 +1,39 @@
+<div class="col-md-4 sidebar-wrapper">
+  <h2>Data Dictionary Contents</h2>
+  <div
+    class="sidebar-toggler"
+    data-bs-toggle="collapse"
+    data-bs-target="#sidebar-left"
+    aria-expanded="false"
+    aria-controls="sidebar-left"
+    data-ga-name="onclick"
+    data-ga-event="collapse"
+    data-ga-type="click"
+    data-ga-region="main content"
+    data-ga-section="Sidebar Navigation"
+  >
+    <p>Select Section</p>
+    <span class="fas fa-chevron-up"></span>
+    <style>
+      #sidebar-left {
+        width: 300px;
+        background-color: white;
+        transition: width 0.3s ease;
+      }
+    </style>
+  </div>
+
+  <nav id="sidebar-left" class="sidebar collapse" aria-label="Secondary Navigation">
+    <div class="nav-link-container">
+      <a class="nav-link" routerLink="/" title="Navigate to Home">Learning&#64;Scale Overview</a>
+    </div>
+
+    <!-- Dynamically Generated Table Links -->
+    <div *ngFor="let table of tables" class="nav-link-container">
+      <a class="nav-link" routerLink="/table" (click)="selectTable(table.table_name)"
+        [title]="'Navigate to ' + table.table_name">
+        {{ table.table_name }}
+      </a>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<div id="layout-wrapper" style="display: flex;">
+  <app-sidebar *ngIf="isSidebarVisible"></app-sidebar>
+
+  <div id="content-wrapper" style="flex: 1; padding: 20px;">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<app-footer></app-footer>
